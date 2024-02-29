@@ -4,7 +4,7 @@ const client = new Client({
     port: 5432,
     database: 'user12',
     user: 'postgres',
-    password: 'fatima',
+    password: '',
   });
   async function createTable() {
     const createUserTableQuery = `
