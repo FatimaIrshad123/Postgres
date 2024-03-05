@@ -27,19 +27,12 @@ async function createTable() {
             done BOOLEAN DEFAULT false
         );
     `);
-    // let insertUser = await client.query(`
-    //     INSERT INTO users(username,email,password) VALUES('Javaria12','xyz12@gmail.com','1234')
-    // `)
     let insertTodo = await client.query(`
     INSERT INTO todos (user_id,title,description) VALUES('1','abc','abc')
     `)
-    let user = await client.query(`SELECT * FROM users`)
-    console.log(user)    
+    let user = await client.query(`SELECT * FROM users`)   
     let todo = await client.query(`SELECT * FROM todos`)
-    console.log(todo)
 }
-//      icreateTable()
-
 async function getUser(email:string) {
     await client.connect()
     const query = `SELECT * FROM users WHERE email = $1`
